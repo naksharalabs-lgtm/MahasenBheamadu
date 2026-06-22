@@ -283,6 +283,8 @@
         .main-content {
             flex: 1;
             min-width: 0;
+            display: flex;
+            flex-direction: column;
         }
         .sidebar h3 {
             color: var(--coral);
@@ -486,6 +488,75 @@
             margin-bottom: 0;
         }
         
+        /* Side project boxed styling */
+        .side-project-box {
+            border: 2px solid var(--electric-blue);
+            border-radius: 6px;
+            padding: 6px 10px 8px 10px;
+            margin-top: 4px;
+            background: rgba(0, 102, 255, 0.03);
+            position: relative;
+        }
+        .side-project-box::before {
+            content: '⚡ SIDE PROJECT';
+            position: absolute;
+            top: -8px;
+            left: 10px;
+            background: white;
+            padding: 0 6px;
+            font-size: 6.5pt;
+            font-weight: 700;
+            color: var(--electric-blue);
+            letter-spacing: 1px;
+        }
+        .side-project-box .project-title {
+            font-weight: 700;
+            font-size: 9pt;
+            color: var(--navy);
+            margin-top: 2px;
+        }
+        .side-project-box .project-role {
+            font-weight: 600;
+            color: var(--electric-blue);
+            font-size: 8pt;
+        }
+        .side-project-box .project-status {
+            display: inline-block;
+            background: var(--coral);
+            color: white;
+            padding: 0px 8px;
+            border-radius: 10px;
+            font-size: 6.5pt;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .side-project-box .project-desc {
+            font-size: 8pt;
+            line-height: 1.35;
+            margin-top: 2px;
+            color: var(--text-dark);
+        }
+        .side-project-box ul {
+            margin-top: 1px;
+            padding-left: 12px;
+        }
+        .side-project-box ul li {
+            font-size: 7.8pt;
+            line-height: 1.3;
+        }
+        .side-project-box .tech-tag {
+            display: inline-block;
+            background: var(--navy);
+            color: white;
+            padding: 0px 6px;
+            border-radius: 8px;
+            font-size: 6pt;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-right: 2px;
+        }
+        
         /* ============================================================
            PRINT STYLES
            ============================================================ */
@@ -584,6 +655,28 @@
                 color: var(--navy) !important;
                 -webkit-text-fill-color: var(--navy) !important;
                 background: none !important;
+            }
+            
+            .side-project-box {
+                border-color: var(--electric-blue) !important;
+                background: rgba(0, 102, 255, 0.03) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .side-project-box::before {
+                background: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .side-project-box .project-status {
+                background: var(--coral) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .side-project-box .tech-tag {
+                background: var(--navy) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
             
             * {
@@ -858,6 +951,33 @@
                             <li><strong>National Senior Certificate (Matric)</strong> <span class="meta">— Tongaat Secondary School, South Africa (1998)</span></li>
                         </ul>
                     </section>
+
+                    <!-- SIDE PROJECT - BOXED AT BOTTOM -->
+                    <div class="side-project-box">
+                        <div class="project-title">Local AI Agent &amp; LLM Evaluation Environment</div>
+                        <div class="project-role">Personal R&amp;D / AI Engineering</div>
+                        <div style="margin: 1px 0 2px 0;">
+                            <span class="project-status">Ongoing</span>
+                            <span style="font-size: 7pt; color: #888; margin-left: 6px;">
+                                LM Studio · OpenClaw · NVIDIA 5060 Ti · WSL
+                            </span>
+                        </div>
+                        <div class="project-desc">
+                            Designed and built a local AI experimentation environment to evaluate and benchmark multiple LLMs for agentic workflows. Set up LM Studio to run Claude‑compatible models and integrated OpenClaw for tool‑calling and autonomous agent testing. Connected a dedicated NVIDIA 5060 Ti AI compute box to my laptop to enable high‑performance local inference. Currently running iterative experiments to determine which model families (Claude‑compatible, Qwen, Mistral, DeepSeek, etc.) provide the most stable and accurate performance for OpenClaw and Claude‑style reasoning. Work includes model quantization testing, latency benchmarking, prompt stability analysis, and agent reliability evaluation.
+                        </div>
+                        <ul>
+                            <li>Built a fully local, offline‑capable LLM environment using LM Studio and OpenClaw.</li>
+                            <li>Integrated external GPU compute (5060 Ti AI box) for accelerated inference.</li>
+                            <li>Evaluating multiple model architectures to identify the best fit for agent workflows.</li>
+                            <li>Testing model behaviour across quantizations (Q4_K_M, Q5, Q8) and context lengths.</li>
+                            <li>Analysing tool‑calling accuracy, hallucination rates, and long‑loop stability.</li>
+                            <li>Documenting findings to support future scaling into multi‑agent or on‑device AI setups.</li>
+                        </ul>
+                        <div style="font-size: 7.5pt; color: #888; margin-top: 2px; font-style: italic;">
+                            Status: Ongoing — currently in the model‑selection and performance‑benchmarking phase.
+                        </div>
+                    </div>
+
                 </main>
             </div>
         </div>
