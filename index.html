@@ -1,986 +1,775 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Mahasen Bheamadu</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --navy: #0A2540;
-            --navy-light: #1A3A5C;
-            --electric-blue: #0066FF;
-            --electric-blue-light: #4A90FF;
-            --coral: #FF6B35;
-            --coral-light: #FF8A5C;
-            --white: #FFFFFF;
-            --light-grey: #F7F8FA;
-            --text-dark: #1A1A2E;
-            --text-light: #FFFFFF;
-            --sidebar-width: 27%;
-        }
-        * {
-            box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #E8EAED;
-            color: var(--text-dark);
-            line-height: 1.3;
-        }
-        .page {
-            background: var(--white);
-            width: 210mm;
-            min-height: 297mm;
-            height: 297mm;
-            margin: 10mm auto;
-            padding: 5mm 6mm;
-            box-shadow: 0 4px 20px rgba(10, 37, 64, 0.15);
-            position: relative;
-            overflow: hidden;
-            page-break-after: always;
-            border-radius: 2px;
-            page-break-inside: avoid;
-        }
-        .page:last-child {
-            page-break-after: auto;
-            margin: 0 auto;
-            box-shadow: 0 4px 20px rgba(10, 37, 64, 0.15);
-        }
-        
-        /* ============================================================
-           BACKGROUND DESIGN - MORE VIBRANT COLORS
-           ============================================================ */
-        .page-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 0;
-            pointer-events: none;
-            background: 
-                radial-gradient(ellipse at 90% 15%, rgba(0, 102, 255, 0.12) 0%, transparent 60%),
-                radial-gradient(ellipse at 10% 90%, rgba(255, 107, 53, 0.10) 0%, transparent 60%),
-                radial-gradient(ellipse at 50% 50%, rgba(10, 37, 64, 0.04) 0%, transparent 80%);
-        }
-        
-        /* Top right - vibrant blue circle */
-        .bg-block-1 {
-            position: absolute;
-            top: -40px;
-            right: -40px;
-            width: 250px;
-            height: 250px;
-            background: radial-gradient(circle, rgba(0, 102, 255, 0.15) 0%, rgba(0, 102, 255, 0.05) 60%, transparent 100%);
-            border-radius: 50%;
-            z-index: 0;
-            pointer-events: none;
-        }
-        
-        /* Bottom left - vibrant coral circle */
-        .bg-block-2 {
-            position: absolute;
-            bottom: -50px;
-            left: -50px;
-            width: 280px;
-            height: 280px;
-            background: radial-gradient(circle, rgba(255, 107, 53, 0.13) 0%, rgba(255, 107, 53, 0.04) 60%, transparent 100%);
-            border-radius: 50%;
-            z-index: 0;
-            pointer-events: none;
-        }
-        
-        /* Middle right - subtle blue glow */
-        .bg-block-3 {
-            position: absolute;
-            top: 45%;
-            right: -60px;
-            width: 180px;
-            height: 180px;
-            background: radial-gradient(circle, rgba(0, 102, 255, 0.06) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: 0;
-            pointer-events: none;
-        }
-        
-        /* Top left corner accent - vibrant blue */
-        .bg-corner {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50px;
-            height: 50px;
-            z-index: 0;
-            pointer-events: none;
-            border-top: 4px solid var(--electric-blue);
-            border-left: 4px solid var(--electric-blue);
-            opacity: 0.25;
-        }
-        
-        /* Bottom right corner accent - vibrant coral */
-        .bg-corner-2 {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 50px;
-            height: 50px;
-            z-index: 0;
-            pointer-events: none;
-            border-bottom: 4px solid var(--coral);
-            border-right: 4px solid var(--coral);
-            opacity: 0.25;
-        }
-        
-        /* Vibrant dot pattern */
-        .bg-dots {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.06;
-            background-image: radial-gradient(circle, var(--electric-blue) 1.5px, transparent 1.5px);
-            background-size: 28px 28px;
-        }
-        
-        /* Vibrant geometric line - blue */
-        .bg-line-1 {
-            position: absolute;
-            top: 20%;
-            right: 10%;
-            width: 120px;
-            height: 2px;
-            z-index: 0;
-            pointer-events: none;
-            background: linear-gradient(90deg, transparent, var(--electric-blue), transparent);
-            opacity: 0.15;
-            transform: rotate(25deg);
-        }
-        
-        /* Vibrant geometric line - coral */
-        .bg-line-2 {
-            position: absolute;
-            bottom: 25%;
-            left: 5%;
-            width: 100px;
-            height: 2px;
-            z-index: 0;
-            pointer-events: none;
-            background: linear-gradient(90deg, transparent, var(--coral), transparent);
-            opacity: 0.15;
-            transform: rotate(-20deg);
-        }
-        
-        .content-wrapper {
-            position: relative;
-            z-index: 1;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        /* ============================================================
-           END BACKGROUND
-           ============================================================ */
-        
-        header {
-            border-bottom: 3px solid var(--navy);
-            padding-bottom: 4px;
-            margin-bottom: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            flex-shrink: 0;
-        }
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--coral);
-        }
-        .header-text h1 {
-            margin: 0;
-            font-size: 24pt;
-            font-weight: 800;
-            color: var(--navy);
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-            line-height: 1.1;
-        }
-        .job-title {
-            font-size: 11.5pt;
-            color: var(--electric-blue);
-            font-weight: 600;
-            margin-top: 1px;
-        }
-        .job-title .coral-text {
-            color: var(--coral);
-        }
-        .profile-img {
-            width: 85px;
-            height: 85px;
-            border-radius: 50%;
-            border: 3px solid var(--electric-blue);
-            object-fit: cover;
-            box-shadow: 0 2px 12px rgba(0, 102, 255, 0.2);
-            flex-shrink: 0;
-        }
-        .cv-body {
-            display: flex;
-            gap: 14px;
-            align-items: flex-start;
-            flex: 1;
-            min-height: 0;
-        }
-        .sidebar {
-            flex: 0 0 var(--sidebar-width);
-            background: var(--navy);
-            color: var(--text-light);
-            padding: 10px 12px 12px 12px;
-            border-radius: 6px;
-            height: fit-content;
-            box-shadow: 0 2px 8px rgba(10, 37, 64, 0.15);
-            position: relative;
-            overflow: hidden;
-        }
-        .sidebar::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--coral);
-            pointer-events: none;
-        }
-        /* Sidebar inner glow */
-        .sidebar::after {
-            content: '';
-            position: absolute;
-            top: -30px;
-            right: -30px;
-            width: 120px;
-            height: 120px;
-            background: radial-gradient(circle, rgba(255, 107, 53, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .sidebar > * {
-            position: relative;
-            z-index: 1;
-        }
-        .main-content {
-            flex: 1;
-            min-width: 0;
-            display: flex;
-            flex-direction: column;
-        }
-        .sidebar h3 {
-            color: var(--coral);
-            text-transform: uppercase;
-            font-size: 8.5pt;
-            font-weight: 700;
-            letter-spacing: 0.8px;
-            border-bottom: 1px solid rgba(255,255,255,0.15);
-            padding-bottom: 3px;
-            margin-top: 8px;
-            margin-bottom: 4px;
-        }
-        .sidebar h3:first-of-type {
-            margin-top: 0;
-        }
-        .contact-item {
-            margin-bottom: 3px;
-            font-size: 8.5pt;
-            line-height: 1.25;
-        }
-        .contact-item span {
-            display: block;
-            color: var(--coral-light);
-            font-size: 7pt;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        .contact-item .value {
-            color: var(--text-light);
-            font-weight: 400;
-            word-break: break-word;
-        }
-        .contact-item .value a {
-            color: var(--text-light);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255,255,255,0.15);
-        }
-        .skill-tag {
-            display: inline-block;
-            background: var(--electric-blue);
-            color: white;
-            padding: 1px 8px;
-            border-radius: 12px;
-            font-size: 7pt;
-            margin: 1px 1px 1px 0;
-            font-weight: 600;
-            letter-spacing: 0.2px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        section {
-            margin-bottom: 4px;
-        }
-        h2 {
-            color: var(--navy);
-            font-size: 10.5pt;
-            text-transform: uppercase;
-            border-left: 3px solid var(--coral);
-            padding-left: 6px;
-            margin-bottom: 3px;
-            font-weight: 700;
-            letter-spacing: 0.8px;
-            position: relative;
-        }
-        .profile-text {
-            font-size: 9pt;
-            text-align: justify;
-            line-height: 1.4;
-            color: var(--text-dark);
-        }
-        .profile-text .highlight {
-            color: var(--electric-blue);
-            font-weight: 600;
-        }
-        .work-item {
-            margin-bottom: 3px;
-            page-break-inside: avoid;
-            padding-left: 2px;
-            border-left: 2px solid transparent;
-        }
-        .work-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 2px;
-        }
-        .work-title {
-            font-weight: 700;
-            font-size: 9.5pt;
-            color: var(--navy);
-        }
-        .work-company {
-            font-weight: 600;
-            color: var(--electric-blue);
-            font-size: 8.5pt;
-            display: block;
-            margin: 0px 0 1px 0;
-        }
-        .work-date {
-            font-size: 8pt;
-            color: #888;
-            font-weight: 500;
-            white-space: nowrap;
-            background: var(--light-grey);
-            padding: 0px 6px;
-            border-radius: 10px;
-        }
-        .one-liner {
-            font-size: 9pt;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 1px;
-            padding-bottom: 0px;
-            border-bottom: 1px solid #eee;
-            page-break-inside: avoid;
-            page-break-after: avoid;
-            line-height: 1.35;
-        }
-        ul {
-            padding-left: 12px;
-            margin: 1px 0 0 0;
-        }
-        li {
-            margin-bottom: 0px;
-            font-size: 8.2pt;
-            line-height: 1.3;
-            color: var(--text-dark);
-        }
-        li::marker {
-            color: var(--coral);
-        }
-        .kern-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1px 6px;
-        }
-        .kern-item {
-            font-size: 8pt;
-            font-weight: 600;
-            padding: 1px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            color: rgba(255,255,255,0.95);
-        }
-        .kern-item:nth-last-child(2),
-        .kern-item:last-child {
-            border-bottom: none;
-        }
-        .edu-list {
-            list-style: none;
-            padding-left: 0;
-            margin: 0;
-        }
-        .edu-list li {
-            font-size: 8.5pt;
-            padding: 1px 0;
-            border-bottom: 1px solid #f0f0f0;
-            line-height: 1.3;
-            padding-left: 14px;
-            position: relative;
-        }
-        .edu-list li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--coral);
-            font-weight: 700;
-        }
-        .edu-list li:last-child {
-            border-bottom: none;
-        }
-        .edu-list strong {
-            color: var(--navy);
-            font-weight: 600;
-        }
-        .edu-list .meta {
-            color: #888;
-            font-weight: 400;
-        }
-        .project-highlight {
-            font-size: 8.5pt;
-            line-height: 1.3;
-            margin-bottom: 2px;
-            padding-left: 10px;
-            border-left: 2px solid var(--electric-blue);
-            padding-left: 8px;
-        }
-        .project-highlight strong {
-            color: var(--navy);
-        }
-        .one-liner-container {
-            page-break-inside: avoid;
-            page-break-after: avoid;
-        }
-        
-        .page-1 .main-content {
-            display: flex;
-            flex-direction: column;
-        }
-        .page-1 .main-content section:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* Side project boxed styling */
-        .side-project-box {
-            border: 2px solid var(--electric-blue);
-            border-radius: 6px;
-            padding: 6px 10px 8px 10px;
-            margin-top: 4px;
-            background: rgba(0, 102, 255, 0.03);
-            position: relative;
-        }
-        .side-project-box::before {
-            content: '⚡ SIDE PROJECT';
-            position: absolute;
-            top: -8px;
-            left: 10px;
-            background: white;
-            padding: 0 6px;
-            font-size: 6.5pt;
-            font-weight: 700;
-            color: var(--electric-blue);
-            letter-spacing: 1px;
-        }
-        .side-project-box .project-title {
-            font-weight: 700;
-            font-size: 9pt;
-            color: var(--navy);
-            margin-top: 2px;
-        }
-        .side-project-box .project-role {
-            font-weight: 600;
-            color: var(--electric-blue);
-            font-size: 8pt;
-        }
-        .side-project-box .project-status {
-            display: inline-block;
-            background: var(--coral);
-            color: white;
-            padding: 0px 8px;
-            border-radius: 10px;
-            font-size: 6.5pt;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .side-project-box .project-desc {
-            font-size: 8pt;
-            line-height: 1.35;
-            margin-top: 2px;
-            color: var(--text-dark);
-        }
-        .side-project-box ul {
-            margin-top: 1px;
-            padding-left: 12px;
-        }
-        .side-project-box ul li {
-            font-size: 7.8pt;
-            line-height: 1.3;
-        }
-        .side-project-box .tech-tag {
-            display: inline-block;
-            background: var(--navy);
-            color: white;
-            padding: 0px 6px;
-            border-radius: 8px;
-            font-size: 6pt;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            margin-right: 2px;
-        }
-        
-        /* ============================================================
-           PRINT STYLES
-           ============================================================ */
-        @media print {
-            body { 
-                background: none; 
-                padding: 0; 
-                line-height: 1.2;
-                margin: 0;
-            }
-            .page { 
-                margin: 0; 
-                box-shadow: none; 
-                border-radius: 0;
-                padding: 4mm 5mm !important;
-                min-height: 297mm;
-                height: 297mm;
-                overflow: hidden;
-                background: white !important;
-                page-break-after: always;
-                page-break-inside: avoid;
-            }
-            .page:last-child {
-                page-break-after: auto;
-            }
-            
-            .page-bg,
-            .bg-block-1,
-            .bg-block-2,
-            .bg-block-3,
-            .bg-corner,
-            .bg-corner-2,
-            .bg-dots,
-            .bg-line-1,
-            .bg-line-2 {
-                display: block !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            
-            .sidebar { 
-                -webkit-print-color-adjust: exact !important; 
-                print-color-adjust: exact !important;
-                padding: 8px 10px 10px 10px !important;
-                background: var(--navy) !important;
-            }
-            .sidebar::before,
-            .sidebar::after {
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                display: block !important;
-            }
-            .sidebar h3 {
-                color: var(--coral) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            .contact-item span {
-                color: var(--coral-light) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            .skill-tag {
-                background: var(--electric-blue) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            header { 
-                -webkit-print-color-adjust: exact !important; 
-                print-color-adjust: exact !important;
-                padding-bottom: 3px !important;
-                margin-bottom: 4px !important;
-            }
-            header::after {
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                display: block !important;
-            }
-            
-            .work-item {
-                page-break-inside: avoid !important;
-            }
-            .one-liner {
-                page-break-inside: avoid !important;
-                page-break-after: avoid !important;
-            }
-            .one-liner-container {
-                page-break-inside: avoid !important;
-                page-break-after: avoid !important;
-            }
-            section {
-                page-break-inside: avoid !important;
-            }
-            
-            .header-text h1 {
-                color: var(--navy) !important;
-                -webkit-text-fill-color: var(--navy) !important;
-                background: none !important;
-            }
-            
-            .side-project-box {
-                border-color: var(--electric-blue) !important;
-                background: rgba(0, 102, 255, 0.03) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            .side-project-box::before {
-                background: white !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            .side-project-box .project-status {
-                background: var(--coral) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            .side-project-box .tech-tag {
-                background: var(--navy) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-            
-            * {
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahasen Bheamadu · Cyberpunk CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(rgba(16, 16, 24, 0.85), rgba(16, 16, 24, 0.96)),
+                  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAIAAAASwwGMAAAAAXNSR0YB...') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 400;
+      color: #e0e0f0;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cv-container {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(10, 10, 18, 0.6);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 2rem;
+      padding: 2.5rem 2.8rem;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.7), 0 0 80px rgba(239, 83, 110, 0.15);
+      border: 1px solid rgba(239, 83, 110, 0.2);
+      position: relative;
+    }
+
+    /* ----- TOP RIGHT PROFILE PIC ----- */
+    .profile-pic {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      border: 3px solid #4bddd6;
+      box-shadow: 0 0 25px rgba(75, 221, 214, 0.4), 0 0 60px rgba(239, 83, 110, 0.2);
+      background: #1a1a2e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: 0.3s ease;
+    }
+    .profile-pic:hover {
+      border-color: #ff7b9c;
+      box-shadow: 0 0 40px rgba(239, 83, 110, 0.5), 0 0 80px rgba(75, 221, 214, 0.2);
+      transform: scale(1.02);
+    }
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .profile-pic .initials {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #4bddd6;
+      text-shadow: 0 0 20px rgba(75, 221, 214, 0.5);
+      letter-spacing: 2px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      color: #f0f0ff;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      text-align: center;
+      background: linear-gradient(135deg, #ff7b9c, #4bddd6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 20px rgba(75, 221, 214, 0.3), 0 0 60px rgba(239, 83, 110, 0.2);
+      margin-bottom: 0.25rem;
+      padding-right: 20px;
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      border-bottom: 2px solid rgba(75, 221, 214, 0.25);
+      padding-bottom: 0.3rem;
+      margin: 2rem 0 1.2rem 0;
+      display: inline-block;
+      letter-spacing: 0.08em;
+      color: #d0e0ff;
+      text-shadow: 0 0 12px rgba(75, 221, 214, 0.2);
+    }
+
+    a {
+      color: #4bddd6;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+    }
+    a:hover {
+      color: #ff7b9c;
+      border-bottom-color: #ff7b9c;
+      text-shadow: 0 0 12px rgba(239, 83, 110, 0.5);
+    }
+
+    .hero-sub {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: #b0c0e0;
+      margin-top: 0.1rem;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.06em;
+      padding-right: 20px;
+    }
+
+    /* ----- CONTACT LINKS ----- */
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem 1.8rem;
+      padding: 0.6rem 1rem;
+      margin: 0.2rem auto 1.2rem auto;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 40px;
+      border: 1px solid rgba(75, 221, 214, 0.1);
+      backdrop-filter: blur(2px);
+      max-width: 90%;
+    }
+    .contact-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #c8d8ff;
+      border-bottom: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: 0.2s;
+      font-family: 'Rajdhani', sans-serif;
+      letter-spacing: 0.03em;
+    }
+    .contact-links a:hover {
+      color: #4bddd6;
+      border-bottom-color: #4bddd6;
+      text-shadow: 0 0 16px rgba(75, 221, 214, 0.3);
+    }
+    .contact-links .icon {
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+    .contact-links .sep {
+      color: rgba(75, 221, 214, 0.2);
+      font-weight: 300;
+    }
+
+    #quick-jump {
+      text-align: center;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin: 0.6rem 0 0.8rem 0;
+      padding: 0.5rem 1.2rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 40px;
+      display: inline-block;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(75, 221, 214, 0.15);
+    }
+    #quick-jump a {
+      margin: 0 0.7rem;
+      font-weight: 600;
+      border-bottom: none;
+    }
+    #quick-jump a:hover {
+      border-bottom: 1px solid #ff7b9c;
+    }
+
+    /* ----- PROFILE SUMMARY ----- */
+    .profile-summary {
+      background: rgba(16, 20, 32, 0.5);
+      backdrop-filter: blur(2px);
+      border-left: 4px solid #ff7b9c;
+      border-radius: 12px;
+      padding: 1.2rem 1.8rem;
+      margin: 0.2rem 0 1.8rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transition: 0.2s;
+    }
+    .profile-summary:hover {
+      border-left-color: #4bddd6;
+      box-shadow: 0 0 30px rgba(75, 221, 214, 0.08);
+    }
+    .profile-summary p {
+      margin: 0;
+      color: #d0def0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* ----- EXPERIENCE CARDS ----- */
+    .exp-card {
+      background: rgba(16, 20, 32, 0.6);
+      backdrop-filter: blur(2px);
+      border-left: 4px solid #4bddd6;
+      padding: 1.1rem 1.8rem;
+      border-radius: 12px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: 0.2s;
+    }
+    .exp-card:hover {
+      border-left-color: #ff7b9c;
+      box-shadow: 0 0 30px rgba(239, 83, 110, 0.15);
+    }
+    .exp-card .title {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #c8d8ff;
+      display: block;
+      margin-bottom: 0.05rem;
+      letter-spacing: 0.03em;
+    }
+    .exp-card .company {
+      font-weight: 500;
+      font-size: 1rem;
+      color: #8aa0c0;
+      display: block;
+      margin-bottom: 0.05rem;
+    }
+    .exp-card .meta {
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: #6a809a;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .exp-card ul {
+      list-style: none;
+      padding-left: 0.2rem;
+    }
+    .exp-card li {
+      position: relative;
+      padding-left: 1.6rem;
+      margin-bottom: 0.2rem;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .exp-card li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #4bddd6;
+      font-size: 1.1rem;
+    }
+
+    /* ----- ONE-LINER EXPERIENCE (compact) ----- */
+    .exp-compact {
+      background: rgba(16, 20, 32, 0.4);
+      border-left: 3px solid #6a809a;
+      padding: 0.5rem 1.4rem;
+      border-radius: 8px;
+      margin-bottom: 0.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.2rem 0.8rem;
+      transition: 0.2s;
+    }
+    .exp-compact:hover {
+      border-left-color: #4bddd6;
+      background: rgba(16, 20, 32, 0.6);
+    }
+    .exp-compact .role {
+      font-weight: 600;
+      color: #d0def0;
+      font-size: 0.92rem;
+    }
+    .exp-compact .company-name {
+      color: #8aa0c0;
+      font-size: 0.88rem;
+    }
+    .exp-compact .date {
+      color: #6a809a;
+      font-size: 0.82rem;
+      font-weight: 300;
+      margin-left: auto;
+    }
+    .exp-compact .bullet {
+      color: #4bddd6;
+      margin-right: 0.2rem;
+      font-size: 0.7rem;
+    }
+
+    /* ----- PROJECT BLOCKS ----- */
+    .project-block {
+      background: rgba(8, 12, 24, 0.5);
+      backdrop-filter: blur(2px);
+      border-radius: 16px;
+      padding: 1.4rem 1.8rem;
+      margin-bottom: 1.8rem;
+      border: 1px solid rgba(75, 221, 214, 0.12);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+      transition: 0.2s;
+    }
+    .project-block:hover {
+      border-color: rgba(239, 83, 110, 0.25);
+      box-shadow: 0 0 40px rgba(239, 83, 110, 0.08);
+    }
+
+    .project-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+      border-bottom: 1px dashed rgba(75, 221, 214, 0.15);
+      padding-bottom: 0.4rem;
+    }
+    .project-title {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: 0.03em;
+    }
+    .project-title a {
+      color: #ff7b9c;
+      border-bottom: 1px solid transparent;
+      transition: 0.2s;
+    }
+    .project-title a:hover {
+      color: #4bddd6;
+      border-bottom-color: #4bddd6;
+      text-shadow: 0 0 20px rgba(75, 221, 214, 0.4);
+    }
+    .project-sub {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #99b0d6;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 0.15rem 1rem;
+      border-radius: 30px;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(75, 221, 214, 0.08);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 0.2rem;
+    }
+
+    .project-grid p {
+      margin: 0;
+      font-weight: 400;
+      color: #d0d8ec;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      background: rgba(0, 0, 0, 0.15);
+      padding: 0.7rem 1.2rem;
+      border-radius: 10px;
+      border-left: 3px solid rgba(239, 83, 110, 0.25);
+    }
+
+    .project-grid ul {
+      list-style: none;
+      margin: 0;
+      padding: 0.5rem 0.2rem 0.5rem 0.8rem;
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+      border-left: 3px solid rgba(75, 221, 214, 0.25);
+    }
+    .project-grid li {
+      position: relative;
+      padding-left: 1.8rem;
+      margin-bottom: 0.3rem;
+      font-weight: 400;
+      color: #ccd8f0;
+      font-size: 0.93rem;
+    }
+    .project-grid li::before {
+      content: "◆";
+      position: absolute;
+      left: 0;
+      color: #4bddd6;
+      font-size: 0.7rem;
+      top: 0.1rem;
+    }
+
+    /* ----- SIDE PROJECT (AI) ----- */
+    .side-project .project-header {
+      border-bottom-color: rgba(239, 83, 110, 0.3);
+    }
+    .side-project .project-title a {
+      color: #ff7b9c;
+    }
+    .side-project .project-title a:hover {
+      color: #4bddd6;
+    }
+    .side-project .project-sub {
+      background: rgba(239, 83, 110, 0.12);
+      border-color: rgba(239, 83, 110, 0.2);
+      color: #f0c0d0;
+    }
+
+    /* ----- CYBERSECURITY ----- */
+    .cyber-box {
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(2px);
+      padding: 1.2rem 1.8rem;
+      border-radius: 16px;
+      border-left: 4px solid #ff7b9c;
+      margin: 1.2rem 0 0.8rem 0;
+    }
+    .cyber-box p {
+      margin: 0;
+      color: #d0def0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* ----- EDUCATION ----- */
+    .qual-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.8rem;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 1rem 1.8rem;
+      border-radius: 40px;
+      border: 1px solid rgba(75, 221, 214, 0.1);
+      margin-top: 0.3rem;
+      justify-content: center;
+    }
+    .qual-item {
+      font-weight: 500;
+      color: #d0def0;
+      font-size: 1rem;
+      letter-spacing: 0.03em;
+    }
+    .qual-item strong {
+      color: #4bddd6;
+      font-weight: 600;
+    }
+
+    .section-center {
+      text-align: center;
+    }
+    .section-center h2 {
+      display: inline-block;
+      margin: 1.8rem 0 1rem 0;
+    }
+
+    /* ===== PRINT / PDF ===== */
+    @media print {
+      body { background: #0a0a12; padding: 0.2in; }
+      .cv-container { border-radius: 0.5rem; padding: 0.8rem 1rem; box-shadow: none; }
+      .profile-pic { width: 60px; height: 60px; top: 0.6rem; right: 0.8rem; border-width: 2px; }
+      h1 { font-size: 1.6rem; padding-right: 60px; }
+      .hero-sub { padding-right: 60px; font-size: 0.9rem; }
+      .project-grid ul { grid-template-columns: 1fr 1fr; }
+      .side-project .project-grid ul { grid-template-columns: 1fr 1fr; }
+      .project-block { page-break-inside: avoid; }
+      .exp-card { page-break-inside: avoid; }
+      .exp-compact { page-break-inside: avoid; }
+      @page { size: A4; margin: 0.4in 0.35in; }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 750px) {
+      .cv-container { padding: 1.5rem; }
+      .profile-pic { width: 65px; height: 65px; top: 1rem; right: 1.2rem; }
+      .profile-pic .initials { font-size: 1.5rem; }
+      h1 { font-size: 2rem; padding-right: 10px; }
+      .hero-sub { padding-right: 10px; font-size: 1rem; }
+      .contact-links { gap: 0.4rem 1rem; padding: 0.4rem 0.8rem; }
+      .contact-links a { font-size: 0.85rem; }
+      .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+      }
+      .project-sub { font-size: 0.85rem; padding: 0.1rem 0.8rem; }
+      #quick-jump a { display: inline-block; margin: 0.2rem 0.3rem; }
+      .qual-grid { flex-direction: column; align-items: center; gap: 0.3rem; border-radius: 20px; }
+      .profile-summary { padding: 1rem; }
+      .exp-compact { padding: 0.4rem 1rem; flex-direction: column; align-items: flex-start; gap: 0.1rem; }
+      .exp-compact .date { margin-left: 0; }
+    }
+
+    @media (max-width: 480px) {
+      .cv-container { padding: 0.8rem; }
+      .profile-pic { width: 55px; height: 55px; top: 0.7rem; right: 0.8rem; border-width: 2px; }
+      .profile-pic .initials { font-size: 1.2rem; }
+      h1 { font-size: 1.6rem; }
+      .exp-card .title { font-size: 1rem; }
+      .project-title { font-size: 1.05rem; }
+      .contact-links { flex-direction: column; align-items: center; gap: 0.2rem; border-radius: 20px; }
+    }
+  </style>
 </head>
 <body>
+<div class="cv-container">
 
-    <!-- PAGE 1 -->
-    <div class="page page-1">
-        <!-- BACKGROUND - MORE VIBRANT -->
-        <div class="page-bg"></div>
-        <div class="bg-block-1"></div>
-        <div class="bg-block-2"></div>
-        <div class="bg-block-3"></div>
-        <div class="bg-corner"></div>
-        <div class="bg-corner-2"></div>
-        <div class="bg-dots"></div>
-        <div class="bg-line-1"></div>
-        <div class="bg-line-2"></div>
-        
-        <div class="content-wrapper">
-            <header>
-                <div class="header-text">
-                    <h1>Mahasen Bheamadu</h1>
-                    <div class="job-title">Technical Project Manager &amp; <span class="coral-text">Scrum Master</span></div>
-                </div>
-                <img src="mahasen-profile.png" alt="Mahasen Bheamadu" class="profile-img">
-            </header>
+  <!-- PROFILE PICTURE -->
+  <div class="profile-pic">
+    <img src="mahasen-profile.png" alt="Mahasen Bheamadu" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <span class="initials" style="display: none;">MB</span>
+  </div>
 
-            <div class="cv-body">
-                <aside class="sidebar">
-                    <h3>Details</h3>
-                    <div class="contact-item">
-                        <span>Location</span>
-                        <span class="value">Utrecht, Netherlands</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>Email</span>
-                        <span class="value">mahbheamadu@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>LinkedIn</span>
-                        <span class="value"><a href="https://linkedin.com/in/mahasen-bheamadu">linkedin.com/in/mahasen-bheamadu</a></span>
-                    </div>
-                    <div class="contact-item">
-                        <span>GitHub</span>
-                        <span class="value"><a href="https://naksharalabs-lgtm.github.io/MahasenBheamadu/">naksharalabs-lgtm.github.io/MahasenBheamadu</a></span>
-                    </div>
-                    <div class="contact-item">
-                        <span>Phone</span>
-                        <span class="value">+31 684 353913</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>Nationality</span>
-                        <span class="value">South African</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>Languages</span>
-                        <span class="value">English (Fluent) · Afrikaans (Basic)</span>
-                    </div>
+  <!-- HERO -->
+  <div style="text-align: center; padding-top: 0.2rem;">
+    <h1>Mahasen Bheamadu</h1>
+    <div class="hero-sub">Technical Project Manager &amp; Agile Coach · Cloud &amp; Infrastructure</div>
 
-                    <h3>Core Competencies</h3>
-                    <div class="kern-grid">
-                        <div class="kern-item">Agile Coaching</div>
-                        <div class="kern-item">SAFe® Expert</div>
-                        <div class="kern-item">Scrum Master</div>
-                        <div class="kern-item">Cloud Governance</div>
-                        <div class="kern-item">Risk Management</div>
-                        <div class="kern-item">Stakeholder Mgmt</div>
-                        <div class="kern-item">Jira / Confluence</div>
-                        <div class="kern-item">Technical Delivery</div>
-                        <div class="kern-item">Data Center Ops</div>
-                        <div class="kern-item">Cybersecurity</div>
-                    </div>
-
-                    <h3>Tools</h3>
-                    <div>
-                        <span class="skill-tag">Azure DevOps</span>
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">Jira</span>
-                        <span class="skill-tag">Confluence</span>
-                        <span class="skill-tag">Miro</span>
-                        <span class="skill-tag">Power BI</span>
-                    </div>
-
-                    <h3>Certifications</h3>
-                    <div class="contact-item"><span class="value">✓ Certified Scrum Master (CSM)</span></div>
-                    <div class="contact-item"><span class="value">✓ SAFe® 5 Certified</span></div>
-                    <div class="contact-item"><span class="value">✓ SAFe® Scrum Master</span></div>
-                    <div class="contact-item"><span class="value">✓ Project Management Foundation</span></div>
-                </aside>
-
-                <main class="main-content">
-                    <section>
-                        <h2>Professional Profile</h2>
-                        <p class="profile-text">
-                            I'm a <span class="highlight">Technical Project Manager</span> who thrives in complex engineering environments where security, governance, and delivery discipline matter. Over the past several years, I've led cloud, infrastructure, and platform initiatives across banking, healthcare, and high-tech, working closely with architects, platform engineers, and InfoSec teams to deliver secure, compliant, and predictable outcomes. I'm at my best when I'm breaking down technical scope, aligning cross-functional teams, managing risks early, and keeping execution structured and transparent. I care about doing things properly — strong governance, clear documentation, and audit-ready delivery — while keeping teams moving and focused on what matters.
-                        </p>
-                    </section>
-
-                    <!-- WORK EXPERIENCE -->
-                    <section>
-                        <h2 style="border-left-color: var(--navy);">Work Experience</h2>
-                        
-                        <div class="work-item">
-                            <div class="work-header">
-                                <span class="work-title">Agile Coach / Scrum Master</span>
-                                <span class="work-date">03/2024 – 03/2026</span>
-                            </div>
-                            <span class="work-company">ASML &bull; Veldhoven, Netherlands</span>
-                            <ul>
-                                <li>Coordinated delivery across 6–10 engineering squads, aligning architecture context and integration points for complex platforms.</li>
-                                <li>Led PI Planning preparation and execution, managing dependencies to align value-stream priorities.</li>
-                                <li>Strengthened governance by embedding data handling controls and traceability into team workflows.</li>
-                                <li>Introduced dependency-visualization to expose cross-team blockers, improving program predictability.</li>
-                                <li>Standardized tooling, reporting, and workflow practices to improve transparency, audit readiness, and cross-team alignment.</li>
-                                <li>Proactively managed risks and impediments, resolving integration issues and environment readiness gaps before they impacted timelines.</li>
-                                <li>Mentored Scrum Masters and team leaders on scaling practices, governance, and structured execution.</li>
-                            </ul>
-                        </div>
-
-                        <div class="work-item">
-                            <div class="work-header">
-                                <span class="work-title">Scrum Master</span>
-                                <span class="work-date">06/2023 – 12/2023</span>
-                            </div>
-                            <span class="work-company">Philips HealthSuite (via Amaris Consulting) &bull; Eindhoven, Netherlands</span>
-                            <ul>
-                                <li>Facilitated SAFe ceremonies for distributed Agile teams in a regulated healthcare environment.</li>
-                                <li>Led PI Planning at scale, enabling teams to prioritize objectives and commit to realistic delivery plans.</li>
-                                <li>Acted as a bridge between engineering teams and business stakeholders to translate requirements into actionable items.</li>
-                                <li>Identified cross-team risks early, facilitated mitigation strategies, and ensured dependencies were tracked and resolved.</li>
-                                <li>Coached teams and leaders on Lean Agile principles, fostering psychological safety and continuous improvement.</li>
-                            </ul>
-                        </div>
-
-                        <div class="work-item">
-                            <div class="work-header">
-                                <span class="work-title">Agile Coach</span>
-                                <span class="work-date">10/2022 – 04/2023</span>
-                            </div>
-                            <span class="work-company">TMC &bull; Eindhoven, Netherlands</span>
-                            <ul>
-                                <li>Improved delivery effectiveness by implementing and scaling Scrum and Lean Agile practices.</li>
-                                <li>Coached leadership to adopt Agile delivery models, improving responsiveness to change.</li>
-                                <li>Partnered with stakeholders to align delivery priorities and clarify requirements.</li>
-                                <li>Embedded governance practices through structured ceremonies, transparent reporting, and consistent communication channels.</li>
-                                <li>Led Agile transformation initiatives, enabling teams to adopt new tools, frameworks, and delivery practices.</li>
-                            </ul>
-                        </div>
-
-                        <div class="work-item">
-                            <div class="work-header">
-                                <span class="work-title">Technical Project Manager &amp; Scrum Master</span>
-                                <span class="work-date">07/2019 – 08/2022</span>
-                            </div>
-                            <span class="work-company">Nedbank &bull; Johannesburg, South Africa</span>
-                            <ul>
-                                <li><strong>Technical Delivery &amp; Security Governance:</strong> Led end-to-end delivery across DEV, ETE, QA, and Production. Ensured cloud builds met IAM, network security, encryption, and compliance controls. Managed VPC design, segmentation, ACLs, firewall rules, identity policies, and workload isolation.</li>
-                                <li><strong>Execution Planning &amp; Reporting:</strong> Built detailed execution plans, milestone maps, and resource forecasts. Produced clear status reporting for senior stakeholders.</li>
-                                <li><strong>Vendor Coordination:</strong> Coordinated delivery across Microsoft, AWS, Dimension Data, BCX, and Oracle. Partnered with Infrastructure &amp; Operations, Information Security, and senior sponsors.</li>
-                                <li><strong>Scrum Master (Network Ops):</strong> Served as Scrum Master for network infrastructure squad, maintaining Azure, AWS, O365, and SD-WAN across South Africa and NAR regions.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Earlier Career One-Liners -->
-                        <div class="one-liner-container">
-                            <div class="one-liner">
-                                <strong>Project Estimation Consultant &amp; Administrator</strong> | 07/2016 – 12/2018 | AllAboutXpert &bull; South Africa
-                            </div>
-                            <div class="one-liner">
-                                <strong>Project Estimation Consultant &amp; Administrator</strong> | 07/2016 – 02/2017 | ABSA Bank via AllAboutXpert &bull; South Africa
-                            </div>
-                            <div class="one-liner">
-                                <strong>Project Manager</strong> | 08/2013 – 06/2016 | Uthongathi Construction &bull; Durban, South Africa
-                            </div>
-                            <div class="one-liner">
-                                <strong>Casino Croupier</strong> | 09/2007 – 07/2013 | Sibaya Casino &bull; Durban, South Africa
-                            </div>
-                        </div>
-
-                    </section>
-                </main>
-            </div>
-        </div>
+    <div class="contact-links">
+      <a href="mailto:mahbheamadu@gmail.com"><span class="icon">✉</span> mahbheamadu@gmail.com</a>
+      <span class="sep">|</span>
+      <a href="https://naksharalabs-lgtm.github.io/MahasenBheamadu/" target="_blank"><span class="icon">⌨</span> GitHub</a>
+      <span class="sep">|</span>
+      <a href="https://www.linkedin.com/in/mahasen-bheamadu" target="_blank"><span class="icon">in</span> LinkedIn</a>
+      <span class="sep">|</span>
+      <a href="tel:+31684353913"><span class="icon">📱</span> +31 6 8435 3913</a>
     </div>
 
-    <!-- PAGE 2 -->
-    <div class="page">
-        <!-- BACKGROUND - MORE VIBRANT -->
-        <div class="page-bg"></div>
-        <div class="bg-block-1"></div>
-        <div class="bg-block-2"></div>
-        <div class="bg-block-3"></div>
-        <div class="bg-corner"></div>
-        <div class="bg-corner-2"></div>
-        <div class="bg-dots"></div>
-        <div class="bg-line-1"></div>
-        <div class="bg-line-2"></div>
-        
-        <div class="content-wrapper">
-            <div class="cv-body">
-                <aside class="sidebar">
-                    <h3>Technical Skills</h3>
-                    <div class="contact-item">
-                        <span class="value">✓ Stakeholder Management</span>
-                        <span class="value">✓ Team Management</span>
-                        <span class="value">✓ Data Center Operations</span>
-                        <span class="value">✓ Risk Management</span>
-                        <span class="value">✓ Jira</span>
-                        <span class="value">✓ Confluence</span>
-                        <span class="value">✓ Scrum &amp; Agile Methodologies</span>
-                        <span class="value">✓ Scrum Master</span>
-                        <span class="value">✓ Project Management</span>
-                        <span class="value">✓ Project Tracking &amp; Reporting</span>
-                        <span class="value">✓ Scope Documentation</span>
-                        <span class="value">✓ Governance &amp; Reporting</span>
-                        <span class="value">✓ Azure &amp; AWS Infrastructure</span>
-                        <span class="value">✓ Network &amp; Server Environments</span>
-                    </div>
-                </aside>
-
-                <main class="main-content">
-                    <!-- NOTABLE PROJECTS -->
-                    <section>
-                        <h2>Notable Projects</h2>
-                        
-                        <div class="project-highlight">
-                            <strong>Azure &amp; AWS Data Centre Build</strong> — Security, Governance &amp; Cloud Infrastructure Delivery: Nedbank<br>
-                            Led a large-scale Azure and AWS cloud migration and infrastructure builds across DEV, ETE, QA, and Production environments. Coordinated Microsoft, AWS, and internal engineering teams through phased milestones, dependency tracking, and structured execution plans. Ensured all cloud environments met security controls, IAM requirements, network access policies, and compliance standards in partnership with Information Security. Managed cloud networking configurations including ACLs, environment isolation, and segmentation of workloads. Maintained audit-ready governance documentation (decision logs, risk registers, change records, technical signoffs). Delivered the program on time and within budget, reducing on-premises data center operating costs.
-                        </div>
-
-                        <div class="project-highlight">
-                            <strong>AIX Rightsizing &amp; Cost Optimization</strong> — Risk, Compliance &amp; Controlled Execution: Nedbank<br>
-                            Managed the optimization of 300+ server environments across DEV, ETE, QA, and Production. Coordinated BCX, Dimension Data, and internal infrastructure teams through a structured, phased execution plan. Ensured all configuration changes underwent security impact assessments, compliance reviews, and formal change management approval. Tracked cross-team dependencies, surfaced risks early, and maintained delivery momentum through clear milestone tracking and stakeholder communication. Improved operational efficiency while maintaining full alignment with security, governance, and audit requirements.
-                        </div>
-
-                        <div class="project-highlight">
-                            <strong>Azure Data Archiving</strong> — Secure Data Handling, Encryption &amp; Governance: Nedbank<br>
-                            Coordinated the secure migration of 400TB+ of on-premises data to Azure. Managed end-to-end execution across Microsoft, BCX, Dimension Data, and internal engineering teams. Partnered with Information Security and compliance teams to ensure data handling, encryption, transfer protocols, and storage configurations met cloud security and governance standards. Delivered a ZAR 3m cost saving by identifying and executing an Azure Databox-based solution. Maintained clear progress tracking, risk visibility, and audit-ready documentation throughout the program.
-                        </div>
-
-                        <div class="project-highlight">
-                            <strong>Agile Release Train Launch</strong> — Multi-Team Structuring &amp; Governance Enablement: ASML<br>
-                            Enabled the launch of a large-scale Agile Release Train by structuring and onboarding cross-functional teams, establishing governance practices, and ensuring clear roles, delivery processes, and alignment mechanisms. Partnered with RTEs, Product Management, and domain leaders to clarify scope and execution strategy.
-                        </div>
-                    </section>
-
-                    <!-- CYBERSECURITY -->
-                    <section>
-                        <h2>Cybersecurity &amp; Compliance Experience</h2>
-                        <p class="profile-text" style="font-size:8.8pt;">
-                            I've worked closely with Information Security teams across multiple programs to ensure every delivery met the required security, governance, and compliance standards. I take responsibility for validating IAM, encryption, network security, and data handling controls before any environment or workload is promoted. I maintain full traceability through decision logs, risk registers, and change records, and I make sure all documentation is audited throughout the lifecycle — not just at the end.
-                        </p>
-                        <p class="profile-text" style="font-size:8.8pt; margin-top:2px;">
-                            I'm comfortable managing security-related risks, coordinating with security analysts and architects, and ensuring that technical teams understand the compliance expectations behind their work. Whether it's secure data migration, cloud environment builds, or infrastructure changes, I make sure the right controls, approvals, and governance steps are followed. My approach aligns well with certification-style evaluation workflows where structure, documentation, and traceability are essential.
-                        </p>
-                    </section>
-
-                    <!-- EDUCATION -->
-                    <section>
-                        <h2 style="border-left-color: var(--navy);">Education &amp; Professional Qualifications</h2>
-                        <ul class="edu-list">
-                            <li><strong>Certified Scrum Master</strong> <span class="meta">— Scrum Alliance (2019)</span></li>
-                            <li><strong>Project Management Foundation</strong> <span class="meta">— University of Cape Town, South Africa (2018)</span></li>
-                            <li><strong>Leading SAFe 5.1</strong> <span class="meta">— SAFe (2021)</span></li>
-                            <li><strong>SAFe&reg; Scrum Master</strong> <span class="meta">— SAFe (2021)</span></li>
-                            <li><strong>National Senior Certificate (Matric)</strong> <span class="meta">— Tongaat Secondary School, South Africa (1998)</span></li>
-                        </ul>
-                    </section>
-
-                    <!-- SIDE PROJECT - BOXED AT BOTTOM -->
-                    <div class="side-project-box">
-                        <div class="project-title">Local AI Agent &amp; LLM Evaluation Environment</div>
-                        <div class="project-role">Personal R&amp;D / AI Engineering</div>
-                        <div style="margin: 1px 0 2px 0;">
-                            <span class="project-status">Ongoing</span>
-                            <span style="font-size: 7pt; color: #888; margin-left: 6px;">
-                                LM Studio · OpenClaw · NVIDIA 5060 Ti · WSL
-                            </span>
-                        </div>
-                        <div class="project-desc">
-                            Designed and built a local AI experimentation environment to evaluate and benchmark multiple LLMs for agentic workflows. Set up LM Studio to run Claude‑compatible models and integrated OpenClaw for tool‑calling and autonomous agent testing. Connected a dedicated NVIDIA 5060 Ti AI compute box to my laptop to enable high‑performance local inference. Currently running iterative experiments to determine which model families (Claude‑compatible, Qwen, Mistral, DeepSeek, etc.) provide the most stable and accurate performance for OpenClaw and Claude‑style reasoning. Work includes model quantization testing, latency benchmarking, prompt stability analysis, and agent reliability evaluation.
-                        </div>
-                        <ul>
-                            <li>Built a fully local, offline‑capable LLM environment using LM Studio and OpenClaw.</li>
-                            <li>Integrated external GPU compute (5060 Ti AI box) for accelerated inference.</li>
-                            <li>Evaluating multiple model architectures to identify the best fit for agent workflows.</li>
-                            <li>Testing model behaviour across quantizations (Q4_K_M, Q5, Q8) and context lengths.</li>
-                            <li>Analysing tool‑calling accuracy, hallucination rates, and long‑loop stability.</li>
-                            <li>Documenting findings to support future scaling into multi‑agent or on‑device AI setups.</li>
-                        </ul>
-                        <div style="font-size: 7.5pt; color: #888; margin-top: 2px; font-style: italic;">
-                            Status: Ongoing — currently in the model‑selection and performance‑benchmarking phase.
-                        </div>
-                    </div>
-
-                </main>
-            </div>
-        </div>
+    <div id="quick-jump">
+      <a href="#profile">Profile</a> <span style="color:#4bddd6; opacity:0.3;">|</span>
+      <a href="#experience">Experience</a> <span style="color:#4bddd6; opacity:0.3;">|</span>
+      <a href="#projects">Projects</a> <span style="color:#4bddd6; opacity:0.3;">|</span>
+      <a href="#side">AI R&amp;D</a> <span style="color:#4bddd6; opacity:0.3;">|</span>
+      <a href="#security">Security</a> <span style="color:#4bddd6; opacity:0.3;">|</span>
+      <a href="#education">Education</a>
     </div>
+  </div>
+
+  <!-- ===== PROFILE ===== -->
+  <section id="profile">
+    <h2>Professional Profile</h2>
+    <div class="profile-summary">
+      <p>I'm a Technical Project Manager who thrives in complex engineering environments where security, governance, and delivery discipline matter. Over the past several years, I've led cloud, infrastructure, and platform initiatives across banking, healthcare, and high-tech, working closely with architects, platform engineers, and InfoSec teams to deliver secure, compliant, and predictable outcomes. I'm at my best when I'm breaking down technical scope, aligning cross-functional teams, managing risks early, and keeping execution structured and transparent. I care about doing things properly — strong governance, clear documentation, and audit-ready delivery — while keeping teams moving and focused on what matters.</p>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <h2>Work Experience</h2>
+
+    <!-- ASML -->
+    <div class="exp-card" style="border-left-color: #ff7b9c;">
+      <span class="title">Agile Coach / Scrum Master</span>
+      <span class="company">ASML · Veldhoven, Netherlands</span>
+      <span class="meta">03/2024 – 03/2026</span>
+      <ul>
+        <li>Coordinated delivery across 6–10 engineering squads, aligning architecture context and integration points for complex platforms.</li>
+        <li>Led PI Planning preparation and execution, managing dependencies to align value-stream priorities.</li>
+        <li>Strengthened governance by embedding data handling controls and traceability into team workflows.</li>
+        <li>Introduced dependency-visualization to expose cross-team blockers, improving program predictability.</li>
+        <li>Standardized tooling, reporting, and workflow practices to improve transparency, audit readiness, and cross-team alignment.</li>
+        <li>Proactively managed risks and impediments, resolving integration issues and environment readiness gaps before they impacted timelines.</li>
+        <li>Mentored Scrum Masters and team leaders on scaling practices, governance, and structured execution.</li>
+      </ul>
+    </div>
+
+    <!-- Philips -->
+    <div class="exp-card">
+      <span class="title">Scrum Master</span>
+      <span class="company">Philips HealthSuite (via Amaris Consulting) · Eindhoven, Netherlands</span>
+      <span class="meta">2022 – 2024</span>
+      <ul>
+        <li>Facilitated SAFe ceremonies for distributed Agile teams in a regulated healthcare environment.</li>
+        <li>Led PI Planning at scale, enabling teams to prioritize objectives and commit to realistic delivery plans.</li>
+        <li>Acted as a bridge between engineering teams and business stakeholders to translate requirements into actionable items.</li>
+        <li>Identified cross-team risks early, facilitated mitigation strategies, and ensured dependencies were tracked and resolved.</li>
+        <li>Coached teams and leaders on Lean Agile principles, fostering psychological safety and continuous improvement.</li>
+      </ul>
+    </div>
+
+    <!-- TMC -->
+    <div class="exp-card" style="border-left-color: #4bddd6;">
+      <span class="title">Agile Coach</span>
+      <span class="company">TMC · Eindhoven, Netherlands</span>
+      <span class="meta">2022 – 2023</span>
+      <ul>
+        <li>Improved delivery effectiveness by implementing and scaling Scrum and Lean Agile practices.</li>
+        <li>Coached leadership to adopt Agile delivery models, improving responsiveness to change.</li>
+        <li>Partnered with stakeholders to align delivery priorities and clarify requirements.</li>
+        <li>Embedded governance practices through structured ceremonies, transparent reporting, and consistent communication channels.</li>
+        <li>Led Agile transformation initiatives, enabling teams to adopt new tools, frameworks, and delivery practices.</li>
+      </ul>
+    </div>
+
+    <!-- Nedbank -->
+    <div class="exp-card" style="border-left-color: #ff7b9c;">
+      <span class="title">Technical Project Manager &amp; Scrum Master</span>
+      <span class="company">Nedbank · Johannesburg, South Africa</span>
+      <span class="meta">07/2019 – 08/2022</span>
+      <ul>
+        <li><strong>Technical Delivery &amp; Security Governance:</strong> Led end-to-end delivery across DEV, ETE, QA, and Production. Ensured cloud builds met IAM, network security, encryption, and compliance controls. Managed VPC design, segmentation, ACLs, firewall rules, identity policies, and workload isolation.</li>
+        <li><strong>Execution Planning &amp; Reporting:</strong> Built detailed execution plans, milestone maps, and resource forecasts. Produced clear status reporting for senior stakeholders.</li>
+        <li><strong>Vendor Coordination:</strong> Coordinated delivery across Microsoft, AWS, Dimension Data, BCX, and Oracle. Partnered with Infrastructure &amp; Operations, Information Security, and senior sponsors.</li>
+        <li><strong>Scrum Master (Network Ops):</strong> Served as Scrum Master for network infrastructure squad, maintaining Azure, AWS, O365, and SD-WAN across South Africa and NAR regions.</li>
+      </ul>
+    </div>
+
+    <!-- ===== ONE-LINER EXPERIENCES (compact) ===== -->
+    <div style="margin-top: 0.2rem;">
+      <div class="exp-compact">
+        <span class="bullet">▹</span>
+        <span class="role">Project Estimation Consultant &amp; Administrator</span>
+        <span class="company-name">AllAboutXpert · South Africa</span>
+        <span class="date">07/2016 – 12/2018</span>
+      </div>
+
+      <div class="exp-compact">
+        <span class="bullet">▹</span>
+        <span class="role">Project Estimation Consultant &amp; Administrator</span>
+        <span class="company-name">ABSA Bank (via AllAboutXpert) · South Africa</span>
+        <span class="date">07/2016 – 02/2017</span>
+      </div>
+
+      <div class="exp-compact">
+        <span class="bullet">▹</span>
+        <span class="role">Project Manager</span>
+        <span class="company-name">Uthongathi Construction · Durban, South Africa</span>
+        <span class="date">08/2013 – 06/2016</span>
+      </div>
+
+      <div class="exp-compact" style="border-left-color: #8aa0c0;">
+        <span class="bullet">▹</span>
+        <span class="role">Casino Croupier</span>
+        <span class="company-name">Sibaya Casino · Durban, South Africa</span>
+        <span class="date">09/2007 – 07/2013</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <h2>Notable Projects</h2>
+
+    <div class="project-block">
+      <div class="project-header">
+        <span class="project-title"><a href="#azure-data-center-build">Azure &amp; AWS Data Centre Build</a></span>
+        <span class="project-sub">Security · Governance · Cloud</span>
+      </div>
+      <div class="project-grid">
+        <p>Led a large‑scale Azure and AWS cloud migration and infrastructure builds across DEV, ETE, QA, and Production environments. Coordinated Microsoft, AWS, and internal engineering teams through phased milestones, dependency tracking, and structured execution plans. Ensured all cloud environments met security controls, IAM requirements, network access policies, and compliance standards in partnership with Information Security. Managed cloud networking configurations including ACLs, environment isolation, and segmentation of workloads. Maintained audit‑ready governance documentation (decision logs, risk registers, change records, technical signoffs). Delivered the program on time and within budget, reducing on‑premises data center operating costs.</p>
+        <ul>
+          <li>End‑to‑end cloud migration &amp; infrastructure build</li>
+          <li>IAM, network policies, encryption, compliance</li>
+          <li>ACLs, environment isolation, segmentation</li>
+          <li>Audit‑ready governance: logs, registers, changes</li>
+          <li>On‑time, within budget, reduced on‑prem costs</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project-block">
+      <div class="project-header">
+        <span class="project-title"><a href="#aix-rightsizing">AIX Rightsizing &amp; Cost Optimization</a></span>
+        <span class="project-sub">Risk · Compliance · Execution</span>
+      </div>
+      <div class="project-grid">
+        <p>Managed the optimization of 300+ server environments across DEV, ETE, QA, and Production. Coordinated BCX, Dimension Data, and internal infrastructure teams through a structured, phased execution plan. Ensured all configuration changes underwent security impact assessments, compliance reviews, and formal change management approval. Tracked cross‑team dependencies, surfaced risks early, and maintained delivery momentum through clear milestone tracking and stakeholder communication. Improved operational efficiency while maintaining full alignment with security, governance, and audit requirements.</p>
+        <ul>
+          <li>Optimized 300+ servers across all environments</li>
+          <li>Security impact assessments &amp; compliance reviews</li>
+          <li>Cross‑team dependency tracking &amp; risk surfacing</li>
+          <li>Improved efficiency, full audit alignment</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project-block">
+      <div class="project-header">
+        <span class="project-title"><a href="#azure-data-archiving">Azure Data Archiving</a></span>
+        <span class="project-sub">Secure Data · Encryption · Governance</span>
+      </div>
+      <div class="project-grid">
+        <p>Coordinated the secure migration of 400TB+ of on‑premises data to Azure. Managed end‑to‑end execution across Microsoft, BCX, Dimension Data, and internal engineering teams. Partnered with Information Security and compliance teams to ensure data handling, encryption, transfer protocols, and storage configurations met cloud security and governance standards. Delivered a ZAR 3m cost saving by identifying and executing an Azure Databox‑based solution. Maintained clear progress tracking, risk visibility, and audit‑ready documentation throughout the program.</p>
+        <ul>
+          <li>Secure migration of 400TB+ data to Azure</li>
+          <li>InfoSec &amp; compliance: encryption, protocols</li>
+          <li>ZAR 3m cost saving via Azure Databox</li>
+          <li>Full traceability &amp; audit‑ready docs</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project-block">
+      <div class="project-header">
+        <span class="project-title"><a href="#agile-release-train-launch">Agile Release Train Launch</a></span>
+        <span class="project-sub">Multi‑Team · Governance</span>
+      </div>
+      <div class="project-grid">
+        <p>Enabled the launch of a large‑scale Agile Release Train by structuring and onboarding cross‑functional teams, establishing governance practices, and ensuring clear roles, delivery processes, and alignment mechanisms. Partnered with RTEs, Product Management, and domain leaders to clarify scope and execution strategy.</p>
+        <ul>
+          <li>Structured &amp; onboarded cross‑functional teams</li>
+          <li>Established governance, roles, delivery processes</li>
+          <li>Partnered with RTEs, Product Management</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SIDE PROJECT: AI ===== -->
+  <section id="side">
+    <h2>Side Project · AI R&amp;D</h2>
+    <div class="project-block side-project">
+      <div class="project-header">
+        <span class="project-title"><a href="#local-ai-agent">Local AI Agent &amp; LLM Evaluation Environment</a></span>
+        <span class="project-sub">Personal R&amp;D · AI Engineering</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin-bottom: 0.6rem; font-size: 0.85rem; color: #99b0d6; background: rgba(0,0,0,0.15); padding: 0.3rem 1rem; border-radius: 30px;">
+        <span><strong style="color:#4bddd6;">Ongoing</strong> · LM Studio · OpenClaw · NVIDIA 5060 Ti · WSL</span>
+      </div>
+      <div class="project-grid">
+        <p>Designed and built a local AI experimentation environment to evaluate and benchmark multiple LLMs for agentic workflows. Set up LM Studio to run Claude‑compatible models and integrated OpenClaw for tool‑calling and autonomous agent testing. Connected a dedicated NVIDIA 5060 Ti AI compute box to my laptop to enable high‑performance local inference. Currently running iterative experiments to determine which model families (Claude‑compatible, Qwen, Mistral, DeepSeek, etc.) provide the most stable and accurate performance for OpenClaw and Claude‑style reasoning. Work includes model quantization testing, latency benchmarking, prompt stability analysis, and agent reliability evaluation.</p>
+        <ul>
+          <li>Fully local, offline‑capable LLM environment</li>
+          <li>External GPU (5060 Ti) for accelerated inference</li>
+          <li>Evaluating Qwen, Mistral, DeepSeek, Claude‑compatible</li>
+          <li>Quantization testing: Q4_K_M, Q5, Q8</li>
+          <li>Tool‑calling accuracy &amp; hallucination analysis</li>
+          <li style="color: #ff7b9c; font-weight: 500;">Status: Ongoing — model‑selection &amp; benchmarking</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CYBERSECURITY ===== -->
+  <section id="security">
+    <h2>Cybersecurity &amp; Compliance</h2>
+    <div class="cyber-box">
+      <p>I've worked closely with Information Security teams across multiple programs to ensure every delivery met the required security, governance, and compliance standards. I take responsibility for validating IAM, encryption, network security, and data handling controls before any environment or workload is promoted. I maintain full traceability through decision logs, risk registers, and change records, and I make sure all documentation is audited throughout the lifecycle — not just at the end. I'm comfortable managing security‑related risks, coordinating with security analysts and architects, and ensuring that technical teams understand the compliance expectations behind their work. Whether it's secure data migration, cloud environment builds, or infrastructure changes, I make sure the right controls, approvals, and governance steps are followed. My approach aligns well with certification‑style evaluation workflows where structure, documentation, and traceability are essential.</p>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education" class="section-center">
+    <h2>Education &amp; Qualifications</h2>
+    <div class="qual-grid">
+      <span class="qual-item"><strong>Certified Scrum Master</strong> — Scrum Alliance (2019)</span>
+      <span class="qual-item"><strong>Project Management Foundation</strong> — University of Cape Town (2018)</span>
+      <span class="qual-item"><strong>Leading SAFe 5.1</strong> — SAFe (2021)</span>
+      <span class="qual-item"><strong>SAFe® Scrum Master</strong> — SAFe (2021)</span>
+      </div>
+  </section>
+
+</div> <!-- end cv-container -->
 </body>
 </html>
