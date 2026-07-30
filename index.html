@@ -135,9 +135,38 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
 /* reveal animation */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:none}
+
+/* scroll progress bar */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--grad);z-index:60}
+
+/* active nav link */
+.nav-links a{position:relative}
+.nav-links a.active{color:var(--accent);font-weight:600}
+
+/* hero role cursor */
+.type-cursor{color:var(--accent);font-weight:400;margin-left:2px;animation:blink 1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* project case-study toggle */
+.proj-toggle{margin-top:14px;align-self:flex-start;background:none;border:none;color:var(--accent);font-size:.82rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:5px;padding:0;font-family:inherit}
+.proj-toggle:hover{color:var(--text)}
+.proj-toggle .chev{transition:transform .25s ease;font-size:.7rem}
+.proj-toggle[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.proj-detail{max-height:0;overflow:hidden;opacity:0;transition:max-height .35s ease,opacity .3s ease,margin-top .35s ease}
+.proj-detail p{font-size:.87rem;color:var(--muted);padding-top:10px;border-top:1px solid var(--line)}
+.proj-detail.open{max-height:320px;opacity:1;margin-top:10px}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{transition:none;opacity:1;transform:none}
+  .proj-detail{transition:none}
+  .type-cursor{animation:none}
+}
 </style>
 </head>
 <body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <nav>
   <div class="wrap nav-inner">
@@ -157,7 +186,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
   <div class="wrap hero-grid">
     <div>
       <span class="kicker">Utrecht, Netherlands · Open to full-time, contract &amp; freelance PM and Scrum Master roles</span>
-      <h1>Technical Project Manager<br>&amp; <span class="grad-text">Scrum Master</span></h1>
+      <h1>Technical Project Manager<br>&amp; <span class="grad-text" id="roleCycle">Scrum Master</span><span class="type-cursor" aria-hidden="true">|</span></h1>
       <p class="sub">I deliver complex cloud, infrastructure and platform programs in regulated environments, <strong>on time, audit-ready, and at scale</strong>. Most recently at ASML, I helped scale an Agile Release Train from 5 to 14 engineering teams.</p>
       <div class="badge-row">
         <div class="badge"><b>ASML</b> · Delivery Lead</div>
@@ -174,12 +203,12 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
   </div>
 </header>
 
-<div class="stats">
+<div class="stats" id="stats">
   <div class="wrap stat-grid">
-    <div><div class="stat-num">12+</div><div class="stat-label">Years delivering projects</div></div>
-    <div><div class="stat-num">5 → 14</div><div class="stat-label">Teams scaled on one Agile Release Train</div></div>
-    <div><div class="stat-num">€2.5m</div><div class="stat-label">Largest program budget owned</div></div>
-    <div><div class="stat-num">80%</div><div class="stat-label">Completion rate against committed objectives</div></div>
+    <div><div class="stat-num"><span class="count" data-end="12">0</span>+</div><div class="stat-label">Years delivering projects</div></div>
+    <div><div class="stat-num"><span class="count" data-end="5">0</span> → <span class="count" data-end="14">0</span></div><div class="stat-label">Teams scaled on one Agile Release Train</div></div>
+    <div><div class="stat-num">€<span class="count" data-end="2.5" data-decimals="1">0</span>m</div><div class="stat-label">Largest program budget owned</div></div>
+    <div><div class="stat-num"><span class="count" data-end="80">0</span>%</div><div class="stat-label">Completion rate against committed objectives</div></div>
   </div>
 </div>
 
@@ -279,24 +308,40 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
         <div class="where">ASML · Netherlands</div>
         <p>Launched a multi-team delivery program from the ground up and helped scale it from 5 to 14 teams, structuring cross-functional teams, establishing governance, and partnering with RTEs and Product Management. Launched on time.</p>
         <div class="metric-row"><span class="metric">5 → 14 teams</span><span class="metric violet">80% completion rate</span><span class="metric">On-time launch</span></div>
+        <button class="proj-toggle" aria-expanded="false">View case study <span class="chev">▾</span></button>
+        <div class="proj-detail">
+          <p>Ran PI Planning end-to-end across the train and led two of the technical squads directly (10 people each, including Product Owners). Built a dependency map that surfaced cross-team blockers before they hit a sprint boundary, and kept Security, Risk and Compliance stakeholders looped into every planning increment rather than brought in at the end.</p>
+        </div>
       </div>
       <div class="proj reveal">
         <h3>Azure &amp; AWS Data Centre Build</h3>
         <div class="where">Nedbank · South Africa</div>
         <p>Led a large-scale cloud migration and infrastructure build across four environments, coordinating Microsoft, AWS and internal teams through phased milestones with full security and compliance signoff.</p>
         <div class="metric-row"><span class="metric">12 months, on time</span><span class="metric violet">Team 10 → 20</span><span class="metric">−50% DC operating costs</span></div>
+        <button class="proj-toggle" aria-expanded="false">View case study <span class="chev">▾</span></button>
+        <div class="proj-detail">
+          <p>Grew the delivery team from 10 to 20 people over the 12-month build while holding the original timeline and budget. Coordinated Microsoft, AWS and internal infrastructure teams through four phased environments, with every milestone signed off by Information Security before the next phase started.</p>
+        </div>
       </div>
       <div class="proj reveal">
         <h3>Azure Data Archiving Migration</h3>
         <div class="where">Nedbank · South Africa</div>
         <p>Coordinated the secure migration of 400TB+ of on-premises data to Azure across four vendor workstreams. Encryption, transfer protocols and storage configurations were validated with Information Security before go-live.</p>
         <div class="metric-row"><span class="metric">400TB+ migrated</span><span class="metric violet">€150k saved</span><span class="metric">Audit-ready throughout</span></div>
+        <button class="proj-toggle" aria-expanded="false">View case study <span class="chev">▾</span></button>
+        <div class="proj-detail">
+          <p>Four vendor workstreams ran in parallel — network, storage, security and application — each validated against encryption and transfer-protocol requirements before a single terabyte moved. The €150k in savings came from decommissioning the on-premises archive footprint once migration was confirmed and signed off.</p>
+        </div>
       </div>
       <div class="proj reveal">
         <h3>AIX Rightsizing &amp; Cost Optimization</h3>
         <div class="where">Nedbank · South Africa</div>
         <p>Managed the end-of-life upgrade and optimization of 300+ AIX server environments as a phased program. Every change went through security impact assessment and formal change control. Application owners reported measurably faster response times.</p>
         <div class="metric-row"><span class="metric">300+ servers</span><span class="metric violet">Faster app response</span><span class="metric">Formal change control</span></div>
+        <button class="proj-toggle" aria-expanded="false">View case study <span class="chev">▾</span></button>
+        <div class="proj-detail">
+          <p>Every one of the 300+ servers went through a formal security impact assessment before its change window, and the program ran without an unplanned outage. Application owners flagged measurably faster response times once end-of-life hardware was retired, which became the case for extending the same approach elsewhere in the estate.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -336,10 +381,103 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;font-si
 </footer>
 
 <script>
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const io = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* scroll progress bar */
+const progressBar = document.getElementById('scrollProgress');
+function updateProgress(){
+  const h = document.documentElement;
+  const scrolled = h.scrollHeight > h.clientHeight
+    ? (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100
+    : 0;
+  progressBar.style.width = scrolled + '%';
+}
+window.addEventListener('scroll', updateProgress, {passive:true});
+updateProgress();
+
+/* active nav-link highlighting */
+const navLinks = document.querySelectorAll('.nav-links a');
+const navSections = document.querySelectorAll('section[id]');
+const navObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(link=>{
+        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+},{rootMargin:'-40% 0px -55% 0px'});
+navSections.forEach(sec=>navObserver.observe(sec));
+
+/* animated stat counters */
+function animateCount(el){
+  const end = parseFloat(el.dataset.end);
+  const decimals = parseInt(el.dataset.decimals || '0', 10);
+  if(prefersReducedMotion){ el.textContent = decimals ? end.toFixed(decimals) : end; return; }
+  const duration = 1200;
+  const start = performance.now();
+  function tick(now){
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    const val = end * eased;
+    el.textContent = decimals ? val.toFixed(decimals) : Math.round(val);
+    if(p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+const statsEl = document.getElementById('stats');
+if(statsEl){
+  const statsObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        statsEl.querySelectorAll('.count').forEach(animateCount);
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:.4});
+  statsObserver.observe(statsEl);
+}
+
+/* role-cycling hero text */
+const roleEl = document.getElementById('roleCycle');
+if(roleEl){
+  const roles = ['Scrum Master','Agile Coach','Delivery Lead'];
+  if(prefersReducedMotion){
+    roleEl.textContent = roles[0];
+  } else {
+    let roleIndex = 0, charIndex = 0, typing = true;
+    function typeLoop(){
+      const current = roles[roleIndex];
+      if(typing){
+        charIndex++;
+        roleEl.textContent = current.slice(0, charIndex);
+        if(charIndex === current.length){ typing = false; setTimeout(typeLoop, 1600); return; }
+      } else {
+        charIndex--;
+        roleEl.textContent = current.slice(0, charIndex);
+        if(charIndex === 0){ typing = true; roleIndex = (roleIndex + 1) % roles.length; setTimeout(typeLoop, 300); return; }
+      }
+      setTimeout(typeLoop, typing ? 70 : 40);
+    }
+    typeLoop();
+  }
+}
+
+/* expandable project case studies */
+document.querySelectorAll('.proj-toggle').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const detail = btn.nextElementSibling;
+    const isOpen = detail.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+    btn.firstChild.textContent = isOpen ? 'Hide case study ' : 'View case study ';
+  });
+});
 </script>
 
 </body>
