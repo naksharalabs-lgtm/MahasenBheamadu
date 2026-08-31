@@ -7,25 +7,28 @@
 <meta name="description" content="Technical Project Manager &amp; Scrum Master in Utrecht, Netherlands. 12+ years delivering cloud, infrastructure and platform programs across banking, healthcare and high-tech.">
 
 <!-- ==========================================================================
-     REPLACE-WITH-YOUR-DOMAIN appears 4x below (canonical, og:url, og:image,
-     JSON-LD url). Swap it for your real domain once this is hosted, otherwise
-     link previews on LinkedIn/WhatsApp will not resolve the image.
+     SITE_URL is set to the live GitHub Pages address. If you later point a
+     custom domain at this repo, update the 5 absolute URLs below (canonical,
+     og:url, og:image, twitter:image, JSON-LD url) to that domain.
      ========================================================================== -->
-<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/">
+<link rel="canonical" href="https://naksharalabs-lgtm.github.io/MahasenBheamadu/">
 
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Mahasen Bheamadu | Technical Project Manager &amp; Scrum Master">
 <meta property="og:description" content="12+ years delivering cloud, infrastructure and platform programs in regulated environments. Scaled an Agile Release Train from 5 to 14 teams at ASML.">
-<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/">
-<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/mahasen-profile.png">
+<meta property="og:url" content="https://naksharalabs-lgtm.github.io/MahasenBheamadu/">
+<meta property="og:image" content="https://naksharalabs-lgtm.github.io/MahasenBheamadu/mahasen-profile.png">
+<meta property="og:image:width" content="460">
+<meta property="og:image:height" content="460">
 <meta property="og:image:alt" content="Portrait of Mahasen Bheamadu">
-<meta property="og:locale" content="en_NL">
+<meta property="og:locale" content="en_GB">
 <meta property="profile:first_name" content="Mahasen">
 <meta property="profile:last_name" content="Bheamadu">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mahasen Bheamadu | Technical Project Manager &amp; Scrum Master">
 <meta name="twitter:description" content="12+ years delivering cloud, infrastructure and platform programs in regulated environments. Utrecht, Netherlands.">
-<meta name="twitter:image" content="https://REPLACE-WITH-YOUR-DOMAIN/mahasen-profile.png">
+<meta name="twitter:image" content="https://naksharalabs-lgtm.github.io/MahasenBheamadu/mahasen-profile.png">
+<meta name="twitter:image:alt" content="Portrait of Mahasen Bheamadu">
 <meta name="theme-color" content="#15120E">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315120E'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-size='28' font-weight='700' fill='%23E0A34A' text-anchor='middle'%3EMB%3C/text%3E%3C/svg%3E">
@@ -44,9 +47,9 @@
   "familyName": "Bheamadu",
   "jobTitle": ["Technical Project Manager", "Scrum Master", "Delivery Lead"],
   "description": "Technical Project Manager and Scrum Master with 12+ years delivering cloud, infrastructure and platform programs in regulated environments across banking, healthcare and high-tech.",
-  "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+  "url": "https://naksharalabs-lgtm.github.io/MahasenBheamadu/",
+  "image": "https://naksharalabs-lgtm.github.io/MahasenBheamadu/mahasen-profile.png",
   "email": "mailto:mahbheamadu@gmail.com",
-  "telephone": "+31684353913",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Utrecht",
@@ -68,7 +71,9 @@
   "seeks": {
     "@type": "Demand",
     "name": "Technical Project Manager, Delivery Lead and Scrum Master roles in the Netherlands (full-time, contract or freelance)"
-  }
+  },
+  "alumniOf": { "@type": "Organization", "name": "University of Cape Town" },
+  "workLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressCountry": "NL" } }
 }
 </script>
 
@@ -142,7 +147,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(21,18,14,.88);backdrop-filt
 .hero::before{content:'';position:absolute;top:-260px;right:-200px;width:620px;height:620px;border-radius:50%;
   background:radial-gradient(circle,rgba(224,163,74,.10),transparent 66%);pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:48px;align-items:center;position:relative;z-index:1}
-@media(max-width:820px){.hero-grid{grid-template-columns:1fr}.hero-media{order:-1;justify-self:start}}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:26px}}
 .hero h1{font-size:clamp(2.1rem,5vw,3.25rem);font-weight:700;line-height:1.1;letter-spacing:-.03em;margin:8px 0 10px}
 .role-line{font-size:1rem;color:var(--muted);margin-bottom:18px;min-height:1.6em}
 .role-line #roleCycle{color:var(--accent);font-weight:600}
@@ -151,17 +156,24 @@ nav{position:sticky;top:0;z-index:50;background:rgba(21,18,14,.88);backdrop-filt
 .badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
 .badge{font-size:.84rem;font-weight:400;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 15px;background:var(--bg-soft)}
 .badge b{color:var(--text);font-weight:600}
-.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.cv-alt{font-size:.88rem;color:var(--muted);margin-top:14px}
+.cv-alt a{border-bottom:1px solid rgba(224,163,74,.35)}
+.cv-alt a:hover{border-bottom-color:var(--accent)}
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.94rem;border-radius:11px;padding:13px 22px;min-height:48px;
   transition:transform var(--dur) var(--ease),box-shadow var(--dur) var(--ease),border-color var(--dur) var(--ease),color var(--dur) var(--ease),background var(--dur) var(--ease)}
 .btn-primary{background:var(--accent);color:var(--on-accent)}
 .btn-primary:hover{background:var(--accent-deep);transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.5)}
 .btn-ghost{border:1px solid var(--line-strong);color:var(--text);background:transparent}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
-.hero-media{justify-self:end;display:block}
-@media(max-width:820px){.hero-media{justify-self:start}}
-.hero-photo{width:230px;height:230px;border-radius:26px;object-fit:cover;display:block;
+/* The photo carries class .hero-photo, so all of its layout rules must be on
+   that selector. An earlier version styled a .hero-media class that no element
+   had, which is why the image never sat flush right and never moved above the
+   text on narrow screens. */
+.hero-photo{width:230px;height:230px;border-radius:26px;object-fit:cover;display:block;justify-self:end;
   border:1px solid var(--line-strong);box-shadow:0 22px 60px rgba(0,0,0,.5)}
+@media(max-width:820px){.hero-photo{order:-1;justify-self:start;width:180px;height:180px;margin-bottom:4px}}
+@media(max-width:560px){.hero-photo{width:132px;height:132px;border-radius:20px}}
 
 /* stats */
 .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-soft);padding:38px 0}
@@ -169,6 +181,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(21,18,14,.88);backdrop-filt
 @media(max-width:720px){.stat-grid{grid-template-columns:repeat(2,1fr);gap:28px 20px}}
 .stat-num{font-size:clamp(1.75rem,3vw,2.05rem);font-weight:700;letter-spacing:-.02em;color:var(--accent)}
 .stat-label{font-size:.88rem;color:var(--muted);margin-top:4px;line-height:1.45}
+.stat-note{font-size:.82rem;color:var(--muted);text-align:center;margin-top:22px;padding-top:16px;
+  border-top:1px solid var(--line);max-width:62ch;margin-left:auto;margin-right:auto;opacity:.85}
 
 /* dual role */
 .role-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -258,11 +272,47 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;font-si
 .type-cursor{color:var(--accent);font-weight:400;margin-left:2px;animation:blink 1.05s step-end infinite}
 @keyframes blink{50%{opacity:0}}
 
+/* Certifications and Contact are both light sections, so their stacked
+   paddings left a dead band between them. Trim both sides of that seam. */
+#certs{padding-bottom:clamp(36px,4vw,52px)}
+#contact{padding-top:clamp(36px,4vw,52px)}
+
+.skip-link{position:absolute;left:16px;top:-60px;z-index:100;background:var(--accent);color:var(--on-accent);
+  font-family:var(--font-display);font-weight:600;font-size:.9rem;padding:11px 18px;border-radius:10px;
+  transition:top var(--dur) var(--ease)}
+.skip-link:focus{top:12px}
+
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
   .reveal{opacity:1;transform:none}
   .type-cursor{animation:none;opacity:0}
+}
+
+/* Recruiters print. Without this the page prints as a dark slab, or as blank
+   panels if background graphics are off. Everything inverts to ink on paper,
+   the chrome is dropped, and the case studies are forced open. */
+@media print{
+  :root{--bg:#fff;--bg-soft:#fff;--card:#fff;--text:#111;--muted:#3d3d3d;
+    --accent:#8a5a10;--accent-deep:#8a5a10;--on-accent:#fff;
+    --line:#d6d0c6;--line-strong:#b4ada1}
+  body{background:#fff;color:#111;font-size:11.5pt}
+  nav,.scroll-progress,.nav-toggle,.proj-toggle,.type-cursor,.hero::before,.contact-box::before{display:none !important}
+  /* The role cycler can be caught mid-word when the print is triggered, so print
+     the static accessible text instead of whatever the animation was showing. */
+  .role-line [aria-hidden="true"]{display:none}
+  .role-line .sr-only{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto;white-space:normal}
+  .reveal{opacity:1 !important;transform:none !important}
+  .proj-detail{display:block !important;animation:none !important}
+  section,.hero{padding:18px 0 !important;break-inside:avoid}
+  .hero-photo{width:120px;height:120px;box-shadow:none}
+  .stats{background:none;padding:14px 0}
+  .role-card,.proj,.cert,.contact-box{background:none;border:1px solid var(--line);break-inside:avoid;box-shadow:none}
+  .t-item,.role-card,.proj,.cert{break-inside:avoid}
+  .btn{border:1px solid var(--line-strong) !important;background:none !important;color:#111 !important}
+  a{color:#111;text-decoration:underline}
+  .cta-row a[href$=".pdf"]::after{content:" (" attr(href) ")";font-weight:400;font-size:.85em;color:#555}
+  footer{border-top:1px solid var(--line)}
 }
 </style>
 <noscript><style>
@@ -280,6 +330,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;font-si
 </head>
 <body id="top">
 
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <nav>
@@ -290,21 +341,21 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;font-si
     </button>
     <div class="nav-links" id="navLinks">
       <a href="#roles">What I Do</a>
-      <a href="#ai">Applied AI</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#ai">Applied AI</a>
       <a href="#certs">Certifications</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
 
-<main>
+<main id="main">
 
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="kicker">Utrecht, Netherlands · Open to full-time, contract &amp; freelance PM and Scrum Master roles</span>
+      <span class="kicker">Utrecht, Netherlands · Available immediately</span>
       <h1>Technical Project Manager <br>&amp; <span class="accent-text">Scrum Master</span></h1>
       <p class="role-line">
         <span class="sr-only">Also working as Agile Coach and Delivery Lead.</span>
@@ -312,15 +363,16 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;font-si
       </p>
       <p class="sub">I deliver complex cloud, infrastructure and platform programs in regulated environments, <strong>on time, audit-ready, and at scale</strong>. Most recently at ASML, I helped scale an Agile Release Train from 5 to 14 engineering teams.</p>
       <div class="badge-row">
+        <div class="badge"><b>Full Dutch work rights</b> · No sponsorship needed</div>
         <div class="badge"><b>ASML</b> · Delivery Lead</div>
         <div class="badge"><b>Philips</b> · Scrum Master</div>
         <div class="badge"><b>Nedbank</b> · Technical PM</div>
       </div>
       <div class="cta-row">
         <a class="btn btn-primary" href="#contact">Get in touch</a>
-        <a class="btn btn-ghost" href="CV_Mahasen_Bheamadu_PM.pdf" download>CV | Project Manager</a>
-        <a class="btn btn-ghost" href="CV_Mahasen_Bheamadu_SM.pdf" download>CV | Scrum Master</a>
+        <a class="btn btn-ghost" href="CV_Mahasen_Bheamadu_PM.pdf" download>Download CV (PDF)</a>
       </div>
+      <p class="cv-alt">Applying for a Scrum Master role? <a href="CV_Mahasen_Bheamadu_SM.pdf" download>Take the Scrum Master CV instead</a>.</p>
     </div>
     <img src="mahasen-profile.png" alt="Mahasen Bheamadu" class="hero-photo" width="460" height="460" fetchpriority="high" decoding="async">
   </div>
@@ -328,11 +380,14 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;font-si
 
 <div class="stats" id="stats">
   <div class="wrap stat-grid">
-    <div><div class="stat-num"><span class="count" data-end="12">0</span>+</div><div class="stat-label">Years delivering projects</div></div>
-    <div><div class="stat-num"><span class="count" data-end="5">0</span> → <span class="count" data-end="14">0</span></div><div class="stat-label">Teams scaled on one Agile Release Train</div></div>
-    <div><div class="stat-num">€<span class="count" data-end="2.5" data-decimals="1">0</span>m</div><div class="stat-label">Largest program budget owned</div></div>
-    <div><div class="stat-num"><span class="count" data-end="80">0</span>%</div><div class="stat-label">Completion rate against committed objectives</div></div>
+    <!-- Real values live in the HTML so the numbers are correct with JavaScript
+         off and to crawlers and link previewers. The script animates up to them. -->
+    <div><div class="stat-num"><span class="count" data-end="12">12</span>+</div><div class="stat-label">Years delivering projects</div></div>
+    <div><div class="stat-num"><span class="count" data-end="5">5</span> → <span class="count" data-end="14">14</span></div><div class="stat-label">Teams scaled on one Agile Release Train</div></div>
+    <div><div class="stat-num">€<span class="count" data-end="2.5" data-decimals="1">2.5</span>m</div><div class="stat-label">Largest program budget owned</div></div>
+    <div><div class="stat-num"><span class="count" data-end="80">80</span>%</div><div class="stat-label">Objectives delivered against commitment</div></div>
   </div>
+  <div class="wrap"><p class="stat-note">Sustained across every planning increment. SAFe treats 80–100% as the healthy predictability range.</p></div>
 </div>
 
 <section id="roles">
@@ -366,26 +421,18 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;font-si
   </div>
 </section>
 
-<section id="ai" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <span class="kicker">Applied AI</span>
-    <h2>AI literacy I've <span class="accent-text">actually lived</span></h2>
-    <p style="color:var(--muted);max-width:70ch;margin-bottom:26px">Outside of delivery work, I'm self-taught in applied AI, and I use it daily rather than just talking about it.</p>
-    <div class="cert-grid">
-      <div class="cert reveal"><b>Applied AI Projects</b><span>Built and run autonomous content agents (OpenClaw framework) on a free NVIDIA-hosted LLM API, publishing to Telegram and Discord.</span></div>
-      <div class="cert reveal"><b>Local &amp; Cloud LLM Use</b><span>Run local LLMs on a dedicated AI box alongside Claude via a routing gateway, balancing cost, privacy, and capability.</span></div>
-      <div class="cert reveal"><b>Daily Practical Use</b><span>Use generative AI tools daily for delivery work, documentation, and communications. Built this site with AI tooling end to end.</span></div>
-      <div class="cert reveal"><b>Self-Taught, Extending Further</b><span>Learned all of this from scratch outside any formal programme, now extending into agentic workflows for code review and testing.</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
+<section id="experience" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <span class="kicker">Experience</span>
     <h2>Career timeline</h2>
     <div class="timeline">
       <div class="t-item latest reveal">
+        <div class="t-date">03/2026 – PRESENT</div>
+        <h3>Independent · Available for new assignments</h3>
+        <div class="t-org">Utrecht, Netherlands</div>
+        <p>Open to <strong>Technical Project Manager, Delivery Lead and Scrum Master</strong> roles across the Netherlands, full-time, contract or freelance. Since ASML I have been deepening the applied AI practice below, building and running autonomous agents and local LLM workflows, and putting those tools to work on delivery reporting and documentation.</p>
+      </div>
+      <div class="t-item reveal">
         <div class="t-date">03/2024 – 03/2026</div>
         <h3>Delivery Lead / Agile Coach</h3>
         <div class="t-org">ASML · Veldhoven, Netherlands</div>
@@ -421,7 +468,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;font-si
   </div>
 </section>
 
-<section id="projects" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section id="projects">
   <div class="wrap">
     <span class="kicker">Flagship Programs</span>
     <h2>Delivery that <span class="accent-text">holds up to scrutiny</span></h2>
@@ -430,7 +477,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;font-si
         <h3>Agile Release Train Launch &amp; Scale-Up</h3>
         <div class="where">ASML · Netherlands</div>
         <p>Launched a multi-team delivery program from the ground up and helped scale it from 5 to 14 teams, structuring cross-functional teams, establishing governance, and partnering with RTEs and Product Management. Launched on time.</p>
-        <div class="metric-row"><span class="metric key">5 → 14 teams</span><span class="metric">80% completion rate</span><span class="metric">On-time launch</span></div>
+        <div class="metric-row"><span class="metric key">5 → 14 teams</span><span class="metric">Launched on time</span></div>
         <button class="proj-toggle" aria-expanded="false" aria-controls="cs-1"><span class="toggle-label">View case study</span> <span class="chev" aria-hidden="true">▾</span></button>
         <div class="proj-detail" id="cs-1"><p>Ran PI Planning end-to-end across the train and led two of the technical squads directly (10 people each, including Product Owners). Built a dependency map that surfaced cross-team blockers before they hit a sprint boundary, and kept Security, Risk and Compliance stakeholders looped into every planning increment rather than brought in at the end.</p>
         </div>
@@ -439,7 +486,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;font-si
         <h3>Azure &amp; AWS Data Centre Build</h3>
         <div class="where">Nedbank · South Africa</div>
         <p>Led a large-scale cloud migration and infrastructure build across four environments, coordinating Microsoft, AWS and internal teams through phased milestones with full security and compliance signoff.</p>
-        <div class="metric-row"><span class="metric key">−50% DC operating costs</span><span class="metric">12 months, on time</span><span class="metric">Team 10 → 20</span></div>
+        <div class="metric-row"><span class="metric key">−50% DC operating costs</span><span class="metric">12 months, on time</span></div>
         <button class="proj-toggle" aria-expanded="false" aria-controls="cs-2"><span class="toggle-label">View case study</span> <span class="chev" aria-hidden="true">▾</span></button>
         <div class="proj-detail" id="cs-2"><p>Grew the delivery team from 10 to 20 people over the 12-month build while holding the original timeline and budget. Coordinated Microsoft, AWS and internal infrastructure teams through four phased environments, with every milestone signed off by Information Security before the next phase started.</p>
         </div>
@@ -448,7 +495,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;font-si
         <h3>Azure Data Archiving Migration</h3>
         <div class="where">Nedbank · South Africa</div>
         <p>Coordinated the secure migration of 400TB+ of on-premises data to Azure across four vendor workstreams. Encryption, transfer protocols and storage configurations were validated with Information Security before go-live.</p>
-        <div class="metric-row"><span class="metric key">400TB+ migrated</span><span class="metric">€150k saved</span><span class="metric">Audit-ready throughout</span></div>
+        <div class="metric-row"><span class="metric key">400TB+ migrated</span><span class="metric">€150k saved</span></div>
         <button class="proj-toggle" aria-expanded="false" aria-controls="cs-3"><span class="toggle-label">View case study</span> <span class="chev" aria-hidden="true">▾</span></button>
         <div class="proj-detail" id="cs-3"><p>Four vendor workstreams ran in parallel — network, storage, security and application — each validated against encryption and transfer-protocol requirements before a single terabyte moved. The €150k in savings came from decommissioning the on-premises archive footprint once migration was confirmed and signed off.</p>
         </div>
@@ -457,11 +504,25 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;font-si
         <h3>AIX Rightsizing &amp; Cost Optimization</h3>
         <div class="where">Nedbank · South Africa</div>
         <p>Managed the end-of-life upgrade and optimization of 300+ AIX server environments as a phased program. Every change went through security impact assessment and formal change control. Application owners reported measurably faster response times.</p>
-        <div class="metric-row"><span class="metric key">300+ servers</span><span class="metric">Faster app response</span><span class="metric">Formal change control</span></div>
+        <div class="metric-row"><span class="metric key">300+ servers</span><span class="metric">No unplanned outages</span></div>
         <button class="proj-toggle" aria-expanded="false" aria-controls="cs-4"><span class="toggle-label">View case study</span> <span class="chev" aria-hidden="true">▾</span></button>
         <div class="proj-detail" id="cs-4"><p>Every one of the 300+ servers went through a formal security impact assessment before its change window, and the program ran without an unplanned outage. Application owners flagged measurably faster response times once end-of-life hardware was retired, which became the case for extending the same approach elsewhere in the estate.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="ai" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <span class="kicker">Applied AI</span>
+    <h2>AI literacy I've <span class="accent-text">actually lived</span></h2>
+    <p style="color:var(--muted);max-width:70ch;margin-bottom:26px">Outside of delivery work, I'm self-taught in applied AI, and I use it daily rather than just talking about it.</p>
+    <div class="cert-grid">
+      <div class="cert reveal"><b>Applied AI Projects</b><span>Built and run autonomous content agents (OpenClaw framework) on a free NVIDIA-hosted LLM API, publishing to Telegram and Discord.</span></div>
+      <div class="cert reveal"><b>Local &amp; Cloud LLM Use</b><span>Run local LLMs on a dedicated AI box alongside Claude via a routing gateway, balancing cost, privacy, and capability.</span></div>
+      <div class="cert reveal"><b>Daily Practical Use</b><span>Use generative AI tools daily for delivery work, documentation, and communications. Built this site with AI tooling end to end.</span></div>
+      <div class="cert reveal"><b>Self-Taught, Extending Further</b><span>Learned all of this from scratch outside any formal programme, now extending into agentic workflows for code review and testing.</span></div>
     </div>
   </div>
 </section>
@@ -484,13 +545,13 @@ footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;font-si
     <div class="contact-box reveal">
       <span class="kicker">Contact</span>
       <h2>Let's talk delivery</h2>
-      <p>Based in Utrecht and available for Technical Project Manager, Delivery Lead, and Scrum Master roles across the Netherlands, full-time, contract, or freelance. English-speaking teams welcome. Dutch in progress (A2).</p>
+      <p>Based in Utrecht and <strong>available immediately</strong> for Technical Project Manager, Delivery Lead, and Scrum Master roles across the Netherlands, full-time, contract, or freelance. English-speaking teams welcome. Dutch in progress (A2).</p>
       <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:mahbheamadu@gmail.com">mahbheamadu@gmail.com</a>
+        <a class="btn btn-primary" href="mailto:mahbheamadu@gmail.com?subject=Role%20enquiry%20for%20Mahasen%20Bheamadu">mahbheamadu@gmail.com</a>
         <a class="btn btn-ghost" href="https://linkedin.com/in/mahasen-bheamadu" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn-ghost" href="tel:+31684353913">+31 684 353 913</a>
+        <a class="btn btn-ghost" href="CV_Mahasen_Bheamadu_PM.pdf" download>Download CV (PDF)</a>
       </div>
-      <div class="visa-note"><b>Work status:</b> HSM visa holder, eligible for a spouse-dependent permit, so <b>no sponsorship required</b>.</div>
+      <div class="visa-note"><b>Work status:</b> Dutch residence permit as a partner, with <b>free access to the labour market</b>. No employer sponsorship or work permit required.</div>
     </div>
   </div>
 </section>
